@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Stats | Marcin Ziarko</title>
+</head>
+<body>
+    <header>
+        <h1>Stats</h1>
+    </header>
+    <div class="all">
+        <p>WprowadŸ iloœæ potrzebnych inputów:</p>
+        <input id="main-input" type="number" min="0" value="1" required />
+
+        <div id="error">
+            <h3>Bez inputów bêdzie lipa...</h3>
+        </div>
+
+        <div id="inputs">
+
+        </div>
+
+        <div id="stats">
+            <table id="result-table">
+                <tr>
+                    <th>Suma</th>
+                    <th>Œrednia</th>
+                    <th>Wart. minimalna</th>
+                    <th>Wart. maksymalna</th>
+                </tr>
+                <tr>
+                    <td><p id="sum">---</p></td>
+                    <td><p id="avg">---</p></td>
+                    <td><p id="mini">---</p></td>
+                    <td><p id="maxi">---</p></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
