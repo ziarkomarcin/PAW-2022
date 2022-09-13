@@ -1,13 +1,13 @@
-var StatsApp = /** @class */ (function () {
-    // ^ number of inputs You want to create 
-    function StatsApp() {
+var Stats = /** @class */ (function () {
+    // ^ ilosc inputow jaka chcemy stworzyc
+    function Stats() {
         var _this = this;
         this.enteredValues = [];
-        // ^ values from dynamically created inputs are saved into array
+        // ^ liczba dynamicznych inputow
         this.howManyInputs = 0;
         var mainInput = document.querySelector('#main-input');
         mainInput.addEventListener('input', function (event) {
-            //console.log("Co� tam dzia�a");
+            //console.log("Coś tam działa");
             var target = event.target;
             // ^ event.target -> returns a reference to the item to which the event was originally sent
             _this.howManyInputs = Number(target.value);
@@ -15,7 +15,7 @@ var StatsApp = /** @class */ (function () {
         });
         new App(this.howManyInputs, this.enteredValues);
     }
-    return StatsApp;
+    return Stats;
 }());
 var App = /** @class */ (function () {
     function App(inputNum, values) {
@@ -85,7 +85,7 @@ var App = /** @class */ (function () {
     App.prototype.error = function () {
         var error = document.getElementById("error");
         error.style.visibility = "visible";
-        console.log("B��d.exe");
+        console.log("Błąd.exe");
     };
     return App;
 }());
@@ -96,7 +96,7 @@ var CraftedInputs = /** @class */ (function () {
         this.input.type = "number";
         this.input.value = values[id] ? String(values[id]) : '0';
         this.input.className = "inp";
-        this.input.id = "input-".concat(id);
+        this.input.id = "input-" + id;
         values[id] = Number(this.input.value);
         this.input.addEventListener('input', function (event) {
             var target = event.target;
@@ -107,7 +107,7 @@ var CraftedInputs = /** @class */ (function () {
         //                  <---!--->
         // START BOX ---> crafting delete button
         this.button = document.createElement('button');
-        this.button.innerText = "�";
+        this.button.innerText = "×";
         this.button.addEventListener('click', function (event) {
             var inputValue = document.getElementById('main-input');
             values[id] = 0;
@@ -149,4 +149,5 @@ var ReturningStats = /** @class */ (function () {
     };
     return ReturningStats;
 }());
-var statsApp = new StatsApp();
+var stats = new Stats();
+//# sourceMappingURL=script.js.map

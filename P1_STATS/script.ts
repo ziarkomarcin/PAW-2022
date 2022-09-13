@@ -1,8 +1,8 @@
-class StatsApp {
+class Stats {
     enteredValues: Array<number> = [];
-    // ^ values from dynamically created inputs are saved into array
+    // ^ liczba dynamicznych inputow
     howManyInputs: number = 0;
-    // ^ number of inputs You want to create 
+    // ^ ilosc inputow jaka chcemy stworzyc
 
     constructor() {
         const mainInput: HTMLInputElement = document.querySelector('#main-input');
@@ -160,4 +160,4 @@ class ReturningStats {
     }
 }
 
-const statsApp = new StatsApp();
+const stats = new Stats();
