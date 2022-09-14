@@ -7,9 +7,7 @@ var Stats = /** @class */ (function () {
         this.howManyInputs = 0;
         var mainInput = document.querySelector('#main-input');
         mainInput.addEventListener('input', function (event) {
-            //console.log("Coś tam działa");
             var target = event.target;
-            // ^ event.target -> returns a reference to the item to which the event was originally sent
             _this.howManyInputs = Number(target.value);
             new App(_this.howManyInputs, _this.enteredValues);
         });
@@ -70,8 +68,6 @@ var App = /** @class */ (function () {
         positions.push(this.statElem(abcd.average, val));
         positions.push(this.statElem(abcd.minimum, val));
         positions.push(this.statElem(abcd.maximum, val));
-        // console.log("Przelicza!");
-        // unprofessional, but it works
         this.sum.innerText = null;
         this.sum.appendChild(positions[0]);
         this.avg.innerText = null;
@@ -80,7 +76,6 @@ var App = /** @class */ (function () {
         this.mini.appendChild(positions[2]);
         this.maxi.innerText = null;
         this.maxi.appendChild(positions[3]);
-        // ^^
     };
     App.prototype.error = function () {
         var error = document.getElementById("error");
@@ -91,7 +86,7 @@ var App = /** @class */ (function () {
 }());
 var CraftedInputs = /** @class */ (function () {
     function CraftedInputs(id, numOf, values) {
-        // START BOX ---> crafting input with number type
+        // INPUTY z typem NUMBER
         this.input = document.createElement('input');
         this.input.type = "number";
         this.input.value = values[id] ? String(values[id]) : '0';
@@ -103,23 +98,21 @@ var CraftedInputs = /** @class */ (function () {
             values[id] = Number(target.value);
             new App(numOf, values);
         });
-        // END BOX ^^
+        // ^^
         //                  <---!--->
-        // START BOX ---> crafting delete button
+        // GUZIK USUWAJĄCY
         this.button = document.createElement('button');
         this.button.innerText = "×";
         this.button.addEventListener('click', function (event) {
             var inputValue = document.getElementById('main-input');
             values[id] = 0;
             values.splice(id, 1);
-            numOf -= 1;
+            numOf -= 1; //zmniejszenie wartości w głównym inpucie po usunięciu generowanego inputa przyciskiem
             inputValue.value = numOf;
-            // ^ when You delete one crafted input, value in main-input decreases by 1
             new App(numOf, values);
         });
-        // END BOX ^^
+        // ^^
     }
-    // crafting a "box" div for input + close button
     CraftedInputs.prototype.boxForEveryInputWithButton = function () {
         var box = document.createElement('div');
         box.className = "every-input-box";
@@ -139,7 +132,6 @@ var ReturningStats = /** @class */ (function () {
     ReturningStats.prototype.average = function (values) {
         var sum = values.reduce(function (a, b) { return a + b; }, 0);
         return Number((sum / values.length).toFixed(4));
-        // ^ toFixed() -> formats a number using fixed-point notation
     };
     ReturningStats.prototype.minimum = function (values) {
         return Math.min.apply(Math, values);

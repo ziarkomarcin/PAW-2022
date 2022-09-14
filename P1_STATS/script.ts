@@ -7,9 +7,7 @@ class Stats {
     constructor() {
         const mainInput: HTMLInputElement = document.querySelector('#main-input');
         mainInput.addEventListener('input', (event: Event) => {
-            //console.log("Coœ tam dzia³a");
             const target = event.target as HTMLInputElement;
-            // ^ event.target -> returns a reference to the item to which the event was originally sent
             this.howManyInputs = Number(target.value);
 
             new App(this.howManyInputs, this.enteredValues);
@@ -28,7 +26,7 @@ class App {
         this.avg.innerText = "---";
         this.mini.innerText = "---";
         this.maxi.innerText = "---";
-        if (this.wrongValue(inputNum, values)) {
+        if (this.wrongValue(inputNum, values)) { 
             this.fillTable(inputNum, values);
             const er = document.getElementById("error");
             er.style.visibility = "hidden";
@@ -74,9 +72,7 @@ class App {
         positions.push(this.statElem(abcd.average, val));
         positions.push(this.statElem(abcd.minimum, val));
         positions.push(this.statElem(abcd.maximum, val));
-        // console.log("Przelicza!");
 
-        // unprofessional, but it works
         this.sum.innerText = null;
         this.sum.appendChild(positions[0]);
         this.avg.innerText = null;
@@ -85,7 +81,6 @@ class App {
         this.mini.appendChild(positions[2]);
         this.maxi.innerText = null;
         this.maxi.appendChild(positions[3]);
-        // ^^
     }
 
     error(): void {
@@ -99,7 +94,7 @@ class CraftedInputs {
     input: HTMLInputElement;
     button: HTMLButtonElement;
     constructor(id, numOf, values: Array<number>) {
-        // START BOX ---> crafting input with number type
+        // INPUTY z typem NUMBER
         this.input = document.createElement('input');
         this.input.type = "number";
         this.input.value = values[id] ? String(values[id]) : '0';
@@ -111,27 +106,25 @@ class CraftedInputs {
             values[id] = Number(target.value);
             new App(numOf, values);
         });
-        // END BOX ^^
+        // ^^
 
         //                  <---!--->
 
-        // START BOX ---> crafting delete button
+        // GUZIK USUWAJ¥CY
         this.button = document.createElement('button');
         this.button.innerText = "×";
         this.button.addEventListener('click', (event: Event) => {
             const inputValue: HTMLInputElement = document.getElementById('main-input') as HTMLInputElement;
             values[id] = 0;
             values.splice(id, 1);
-            numOf -= 1;
+            numOf -= 1; //zmniejszenie wartoœci w g³ównym inpucie po usuniêciu generowanego inputa przyciskiem
             inputValue.value = numOf;
-            // ^ when You delete one crafted input, value in main-input decreases by 1
-
             new App(numOf, values);
         });
-        // END BOX ^^
+        // ^^
 
     }
-    // crafting a "box" div for input + close button
+
     boxForEveryInputWithButton(): HTMLDivElement {
         const box = document.createElement('div');
         box.className = "every-input-box";
@@ -150,7 +143,6 @@ class ReturningStats {
     average(values: Array<number>): number {
         const sum: number = values.reduce((a, b) => a + b, 0);
         return Number((sum / values.length).toFixed(4));
-        // ^ toFixed() -> formats a number using fixed-point notation
     }
     minimum(values: Array<number>): number {
         return Math.min(...values);
