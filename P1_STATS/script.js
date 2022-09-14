@@ -80,7 +80,7 @@ var App = /** @class */ (function () {
     App.prototype.error = function () {
         var error = document.getElementById("error");
         error.style.visibility = "visible";
-        console.log("Błąd.exe");
+        console.log("B��d.exe");
     };
     return App;
 }());
@@ -100,14 +100,14 @@ var CraftedInputs = /** @class */ (function () {
         });
         // ^^
         //                  <---!--->
-        // GUZIK USUWAJĄCY
+        // GUZIK USUWAJ�CY
         this.button = document.createElement('button');
-        this.button.innerText = "×";
+        this.button.innerText = "�";
         this.button.addEventListener('click', function (event) {
             var inputValue = document.getElementById('main-input');
             values[id] = 0;
             values.splice(id, 1);
-            numOf -= 1; //zmniejszenie wartości w głównym inpucie po usunięciu generowanego inputa przyciskiem
+            numOf -= 1; //zmniejszenie warto�ci w g��wnym inpucie po usuni�ciu generowanego inputa przyciskiem
             inputValue.value = numOf;
             new App(numOf, values);
         });
