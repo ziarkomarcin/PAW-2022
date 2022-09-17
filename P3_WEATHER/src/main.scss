@@ -1,0 +1,126 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0f;
+  font-family: "Raleway";
+}
+
+.enter-city-div{
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-content: center;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+
+    p{
+      font-size: 2.5rem;
+      color: #ffffff;
+      cursor: help;
+    }
+
+    #city-enter{
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: #727272;
+      font-size: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #727272;
+    }
+
+    .button-to-add{
+      margin-top: 2.5rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      color: #ff6666;
+      cursor: pointer;
+      width: auto;
+    }
+
+    .button-to-add:hover{
+      border: 2px solid #ff6666;
+      border-radius: 1rem;
+    }
+}
+
+.show-cities-div{
+  margin: 2rem;
+  padding: 1rem;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .cityBox{
+    background-color: transparent;
+    width: 15rem;
+    height: auto;
+    color:white;
+    border: solid 1px;
+    margin: 1.5rem;
+
+    .name_cityBox{
+      margin: 2rem;
+      color:white;
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .sky_cityBox{
+      margin: 2rem;
+      color:white;
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+      font-weight:bold;
+      font-size: 1rem;
+    }
+
+    .half_div{
+      margin: 1rem;
+      width:100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+
+      .temperature_cityBox{
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 50%;
+        height: 5rem;
+        align-items: flex-end;
+        justify-content: center;
+        font-size: 2rem;
+      }
+
+      .dual_div{
+        width: 50%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+
+        .pressure_cityBox, .humidity_cityBox{
+          width: 100%;
+          height: auto;
+          border-left: solid 1px;
+          margin-top: .5rem;
+          padding-left: .5rem;
+        }
+      }
+    }
+  }
+}
