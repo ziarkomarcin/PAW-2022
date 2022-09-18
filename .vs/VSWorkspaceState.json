@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\P1_STATS",
+    "\\P2_DRUMKIT",
+    "\\P3_WEATHER",
+    "\\P3_WEATHER\\dist",
+    "\\P3_WEATHER\\src"
+  ],
+  "SelectedNode": "\\P3_WEATHER\\src\\inter.ts",
+  "PreviewInSolutionExplorer": false
+}
