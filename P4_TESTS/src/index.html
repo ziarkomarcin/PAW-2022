@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <title>Notekeep | Marcin Ziarko 12552</title>
+</head>
+<body>
+    <div id="inputContainer">
+        <div id="input">
+            <div>
+                <p>Tytuł:</p>
+                <input id="inputTitle" class="inputField" type="text" maxlength="20" placeholder="Podaj swój tytuł">
+            </div>
+            <div>
+                <p>Treść notatki:</p>
+                <textarea id="inputText" class="inputField" type="text" placeholder="Wprowadź treść notatki"></textarea>
+            </div>
+        </div>
+        <button type="button" id="submitButton">Dodaj notatkę</button>
+    </div>
+
+    <div id="result">
+        <span>Przypięte</span>
+        <hr>
+        <div id="pinnedNotes" class="noteContainer">
+        </div>
+        <span id="span">Notatki</span>
+        <hr>
+        <div id="notes" class="noteContainer">
+
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
