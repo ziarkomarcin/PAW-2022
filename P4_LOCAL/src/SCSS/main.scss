@@ -1,0 +1,105 @@
+body {
+    background: #0a0a0f;
+    font-family: Raleway;
+}
+
+textarea, input {
+    font-family: Raleway;
+}
+
+#inputContainer {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+#input {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Raleway;
+    margin-right: 15px;
+
+    div {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .inputField {
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: solid 1px;
+        color: #727272;
+        height: 20px;
+        font-size: 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #inputText {
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        border-radius: 12px;
+        border-bottom: none;
+        width: 100%;
+        height: 200px;
+        resize: none;
+    }
+}
+
+#submitButton {
+    width: 5.4%;
+    height: 3rem;
+    border: solid 1px #ff6666;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    font-weight: bold;
+    color: #ff6666;
+    font-size: 15px;
+    min-width: 100px;
+}
+
+#result {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    span {
+        color: #ff6666;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    #pinnedNotes {
+        width: inherit;
+        height: 30%;
+        min-height: 310px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #notes {
+        width: inherit;
+        height: 80%;
+        min-height: 310px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
